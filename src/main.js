@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import VueSession from 'vue-session'
 import router from './router';
-
+import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
 import AutoComplete from 'primevue/autocomplete';
 import Accordion from 'primevue/accordion';
@@ -111,7 +112,7 @@ import BlockViewer from '@/components/BlockViewer.vue';
 import '@/assets/styles.scss';
 
 const app = createApp(App);
-
+app.use(createPinia());
 app.use(router);
 app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
