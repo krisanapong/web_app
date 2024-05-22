@@ -1,11 +1,23 @@
 <script setup>
-import { computed, watch, ref } from 'vue';
+import { computed, watch, ref , onMounted } from 'vue';
 import AppTopbar from './AppTopbar.vue';
 import AppFooter from './AppFooter.vue';
 import AppSidebar from './AppSidebar.vue';
 import AppConfig from './AppConfig.vue';
 import { useLayout } from '@/layout/composables/layout';
-
+// import { useLoginStore } from '../stores/login';
+// import { useRouter } from 'vue-router';
+// const user_login = useLoginStore();
+// const router = useRouter();
+// var check_login = 0;
+// onMounted(async () =>{
+//     await user_login.login()
+//     check_login = parseInt(user_login.list.status);
+//     if(check_login == 0){
+//         router.push({ name: 'login' });
+//     }
+//     console.log(check_login);
+// })
 const { layoutConfig, layoutState, isSidebarActive } = useLayout();
 
 const outsideClickListener = ref(null);
